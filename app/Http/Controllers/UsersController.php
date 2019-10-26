@@ -72,7 +72,7 @@ class UsersController extends Controller
 		    // Content
 		    $mail->isHTML(true);                                  // Set email format to HTML
 		    $mail->Subject = 'Lawin registration';
-		    $mail->Body    = 'This is a test email</b>';
+		    $mail->Body    = 'Testing';
 
 		    $mail->send();
 		    
