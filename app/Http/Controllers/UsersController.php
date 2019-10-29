@@ -29,7 +29,7 @@ class UsersController extends Controller
     	$type = $request->input('type');
     	$status = $request->input('status');
 
-    	//checks is a user exists based on username or email
+    	//checks if a user exists based on username or email
     	$users = Users::where('username', $username)->orwhere('email',$email)->first();
 
 //if user not exist, register it.
@@ -60,19 +60,19 @@ class UsersController extends Controller
 		    $mail->isSMTP();                                            // Send using SMTP
 		    $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
 		    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-		    $mail->Username   = 'aw2ebee@gmail.com';                     // SMTP username
-		    $mail->Password   = '2ebee132ebee13';                               // SMTP password
+		    $mail->Username   = 'lawin.apc@gmail.com';                     // SMTP username
+		    $mail->Password   = 'be@rammm';                               // SMTP password
 		    $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
 		    $mail->Port       = 465;                                    // TCP port to connect to
 
 		    //Recipients
-		    $mail->setFrom('aw2ebee@gmail.com', 'LAWIN No-Reply');
+		    $mail->setFrom('lawin.apc@gmail.com', 'LAWIN No-Reply');
 		    $mail->addAddress($email,$fname.' '.$lname);     // Add a recipient
 		   
 		    // Content
 		    $mail->isHTML(true);                                  // Set email format to HTML
 		    $mail->Subject = 'Lawin registration';
-		    $mail->Body    = 'Testing';
+		    $mail->Body    = 'Please confirm your email....';
 
 		    $mail->send();
 		    

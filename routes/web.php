@@ -22,3 +22,7 @@ Route::post('/reports', 'ReportsController@setCoordinates');
 //users
 Route::post('/users','UsersController@setUser');
 Route::get('/verify/{username}', 'UsersController@verifyUser');
+
+//devices
+Route::post('/devices','DevicesController@setDevice');
+Route::get('/devices/{id}','DevicesController@getPhone') //not sure
