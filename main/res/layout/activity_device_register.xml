@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/blue"
+    android:orientation="vertical">
+
+
+
+    <ImageView
+        android:id="@+id/home"
+        android:layout_width="215dp"
+        android:layout_height="190dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/dev_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <EditText
+        android:id="@+id/dev_name"
+        android:layout_width="307dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginEnd="52dp"
+        android:ems="10"
+        android:fontFamily="@font/open_sans_light"
+        android:hint="Device name"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/background_light"
+        android:textColorHint="@android:color/secondary_text_dark"
+        app:backgroundTint="@android:color/background_light"
+        app:layout_constraintBottom_toTopOf="@+id/dev_wear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/dev_wear"
+        android:layout_width="307dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginEnd="52dp"
+        android:ems="10"
+        android:fontFamily="@font/open_sans_light"
+        android:hint="Device ID(wearable)"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/background_light"
+        android:textColorHint="@android:color/secondary_text_dark"
+        app:backgroundTint="@android:color/background_light"
+        app:layout_constraintBottom_toTopOf="@+id/dev_object"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/dev_object"
+        android:layout_width="307dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="43dp"
+        android:ems="10"
+        android:fontFamily="@font/open_sans_light"
+        android:hint="Device ID(for object)"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/background_light"
+        android:textColorHint="@android:color/secondary_text_dark"
+        app:backgroundTint="@android:color/background_light"
+        app:layout_constraintBottom_toTopOf="@+id/register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginBottom="278dp"
+        android:background="@drawable/tranparent_bg_bordered"
+        android:fontFamily="@font/open_sans_light"
+        android:text="Register"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
