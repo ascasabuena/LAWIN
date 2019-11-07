@@ -21,8 +21,13 @@ Route::post('/reports', 'ReportsController@setCoordinates');
 
 //users
 Route::post('/users','UsersController@setUser');
+Route::post('/users/login','UsersController@login');
 Route::get('/verify/{username}', 'UsersController@verifyUser');
 
 //devices
 Route::post('/devices','DevicesController@setDevice');
-Route::get('/devices/{id}','DevicesController@getPhone') //not sure
+Route::get('/devices/{id}','DevicesController@getPhone');
+
+//devices master
+Route::post('/devicemaster','DeviceMasterController@setDeviceMaster');
+Route::get('/devicemaster/{id}','DeviceMasterController@getDeviceMaster'); //not sure
