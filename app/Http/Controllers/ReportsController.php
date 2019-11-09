@@ -25,7 +25,7 @@ class ReportsController extends Controller
 
     public function setCoordinates($phone_no, $lat, $lng) {
     	//get device id based from phone no
-        $devices = Devices::where('phone_no',$phoneNo)->first();
+        $devices = Devices::where('phone_no', $phone_no)->first();
 
         if(!$devices){
             return response()->json([
