@@ -23,19 +23,14 @@ class ReportsController extends Controller
 
     }
 
-    public function setCoordinates(Request $request) {
-    	$phoneNo = $request->input('phoneNo'); 
-    	$lat = $request->input('lat');
-    	$lng = $request->input('lng');
-
+    public function setCoordinates($phone_no, $lat, $lng) {
     	//get device id based from phone no
         $devices = Devices::where('phone_no',$phoneNo)->first();
 
         if(!$devices){
-
-        return response()->json([
-            'message' => "invalid phone number"
-        ]);
+            return response()->json([
+                'message' => "invalid phone number"
+            ]);
         }
 
     	//get user id based from phone no
