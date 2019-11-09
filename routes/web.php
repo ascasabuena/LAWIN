@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 //Hardware
 Route::get('/reports/{id}', 'ReportsController@getCoordinates');
-Route::post('/reports', 'ReportsController@setCoordinates');
+Route::get('/reports/{phone_no}/{lat}/{lng}', 'ReportsController@setCoordinates');
 
 //users
 Route::post('/users','UsersController@setUser');
