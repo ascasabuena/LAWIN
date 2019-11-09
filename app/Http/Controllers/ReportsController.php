@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 //use Illuminate\Support\Facades\Input;
 use App\Devices;
+use App\DeviceMaster;
 use App\Reports;
 use App\Users;
 
@@ -25,24 +26,23 @@ class ReportsController extends Controller
 
     public function setCoordinates($phone_no, $lat, $lng) {
     	//get device id based from phone no
-        $devices = Devices::where('phone_no', $phone_no)->first();
+        $DeviceMaster = DeviceMaster::where('phone_no', $phone_no)->first();
 
-        if(!$devices){
+        if(!$DeviceMaster){
             return response()->json([
                 'message' => "invalid phone number"
             ]);
         }
 
     	//get user id based from phone no
-        $users = Devices::where('id',$devices->users_id)->first();
+        $Devices = Devices::where('phone_no', $DeviceMaster->id)->first();
 
     	$reports = new Reports;
     	$reports->lat = $lat;
     	$reports->lng = $lng;
 
-    	$reports->devices_id = $devices->id;
-    	$reports->devices_users_id = $users->id;
-    	
+    	$reports->devices_id = $Devices->id;
+    	$reports->devices_users_id = $Devices->users_id;
 
     	$reports->save();
 
