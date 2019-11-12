@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 //use Illuminate\Support\Facades\Input;
 use App\Devices;
@@ -14,9 +15,22 @@ class ReportsController extends Controller
 {
 
     public function getAllReports() {
-        $reports = Reports::all();
-        return response()->json($reports);
+        $reports = DB::query("
+            SELECT
+                r.id, r.lat, r.lng, r.date_created,
+                u.fname, u.lname, u.gender, u.phone_no, u.emergency_no, u.email 
+            FROM reports as r
+            LEFT JOIN users as u
+                ON r.devices_users_id = u.id 
+            WHERE r.id IN (
+                SELECT
+                    max(id) 
+                FROM reports 
+                GROUP BY devices_users_id
+            )
+        ");
 
+        return response()->json($reports);
     }
 
     public function getCoordinates($id){
