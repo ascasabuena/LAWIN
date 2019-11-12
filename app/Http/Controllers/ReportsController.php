@@ -13,6 +13,12 @@ use App\Users;
 class ReportsController extends Controller
 {
 
+    public function getAllReports() {
+        $reports = Reports::all();
+        return response()->json($reports);
+
+    }
+
     public function getCoordinates($id){
 
         $reports = Reports::where('devices_id', $id)

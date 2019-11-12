@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 //Hardware
+Route::get('/reports/getAll', 'ReportsController@getAllReports');
 Route::get('/reports/{id}', 'ReportsController@getCoordinates');
 Route::get('/reports/{phone_no}/{lat}/{lng}', 'ReportsController@setCoordinates');
 
