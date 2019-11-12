@@ -15,7 +15,7 @@ class ReportsController extends Controller
 {
 
     public function getAllReports() {
-        $reports = DB::query("
+        $reports = DB::select("
             SELECT
                 r.id, r.lat, r.lng, r.date_created,
                 u.fname, u.lname, u.gender, u.phone_no, u.emergency_no, u.email 
